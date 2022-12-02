@@ -44,6 +44,15 @@
                                       
                                    </div>
                               </div>
+
+                              <div class="col-4">
+                                <div class="mb-3">
+                                    <label for="Product" class="form-label">Logo title</label>
+                                    <input id="Product" name="Logo_title" type="text" value="{{ @$editLogo->logo_title }}" class="form-control" >                                            
+                                 </div>
+                              </div>
+
+                              
                             </div>
                             <div class="row">
                               <div class="col-4">

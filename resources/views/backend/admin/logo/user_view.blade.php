@@ -36,7 +36,8 @@
                       <thead>
                           <tr>
                               <th>Si</th>
-                              <th>image</th>                              
+                              <th>image</th>    
+                              <th>Name</th>                           
                               <th>Action</th>
                           </tr>
                       </thead>
@@ -51,6 +52,7 @@
                                     alt="User profile picture">
                                 </div>
                               </td>
+                              <td>{{ $user->logo_title }}</td>
                               <td>
                                 <a href="{{ route('edit_logo',$user->id) }}" class="btn btn-success"><i class="fas fa-edit"></i></a>
                                 <a href="{{ route('delete_logo',$user->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>

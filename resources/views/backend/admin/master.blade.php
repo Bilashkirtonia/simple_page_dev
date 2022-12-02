@@ -197,54 +197,47 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
 
-          <li class="nav-item {{ ($prifix == '/mission')?'menu-open':'' }}">
+          <li class="nav-item {{ ($prifix == '/category' || $prifix == '/brand')?'menu-open':'' }}">
             <a href="" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Mission & Vission
+                Category & Brand
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('view_mission') }}" class="nav-link {{ ($route == 'view_mission')?'active':'' }}">
+                <a href="{{ route('view_category') }}" class="nav-link {{ ($route == 'view_category')?'active':'' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Mission</p>
+                  <p>category</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('view_vision') }}" class="nav-link {{ ($route == 'view_vision')?'active':'' }}">
+                <a href="{{ route('view_brand') }}" class="nav-link {{ ($route == 'view_brand')?'active':'' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Vision</p>
+                  <p>Brand</p>
                 </a>
               </li>
             </ul>
           </li>
-          
-          <li class="nav-item {{ ($prifix == '/news')?'menu-open':'' }}">
-            <a href="" class="nav-link">
+          <li class="nav-item {{ ($prifix == '/product')?'menu-open':'' }}">
+            <a href="" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                News & Service
+                Product
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+              
               <li class="nav-item">
-                <a href="{{ route('view_news') }}" class="nav-link {{ ($route == 'view_news')?'active':'' }}">
+                <a href="{{ route('view_product') }}" class="nav-link {{ ($route == 'view_product')?'active':'' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>News</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('view_service') }}" class="nav-link {{ ($route == 'view_service')?'active':'' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>service</p>
+                  <p>Add product </p>
                 </a>
               </li>
             </ul>
-          </li>
-
+          </li> 
           <li class="nav-item {{ ($prifix == '/contact')?'menu-open':'' }}">
             <a href="" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -260,6 +253,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Contact</p>
                 </a>
               </li>
+            </ul>
+          </li>
+
+          <li class="nav-item {{ ($prifix == '/about')?'menu-open':'' }}">
+            <a href="" class="nav-link ">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                About
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              
               <li class="nav-item">
                 <a href="{{ route('view_about') }}" class="nav-link {{ ($route == 'view_about')?'active':'' }}">
                   <i class="far fa-circle nav-icon"></i>
@@ -268,6 +274,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
+
+          <li class="nav-item {{ ($prifix == '/order')?'menu-open':'' }}">
+            <a href="" class="nav-link ">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Order
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+                <a href="{{ route('view_order') }}" class="nav-link {{ ($route == 'view_order')?'active':'' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Orders</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
           
         </ul>
       </nav>

@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('communications', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('mobile');
-            $table->string('address');
-            $table->longText('message');
+            $table->string('name')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('upload_by')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('communications');
+        Schema::dropIfExists('categories');
     }
 };

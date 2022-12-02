@@ -45,7 +45,7 @@
                                     <b>Email :- </b> <span class="float-right">{{ $user->email}}</span>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Numper :- </b> <span class="float-right">{{{ $user->mobile}}}</span>
+                                    <b>Number :- </b> <span class="float-right">{{{ $user->mobile}}}</span>
                                 </li>
                                 <li class="list-group-item">
                                     <b>Role :- </b> <span class="float-right">{{ $user->usertype}}</span>

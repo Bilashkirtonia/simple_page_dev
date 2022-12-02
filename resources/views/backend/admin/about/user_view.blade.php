@@ -18,7 +18,7 @@
             <div class="card">
               <div class="card-header">
                 <h4>About 
-                  @if ($logo == 1)
+                  @if ($logo==1)
                     
                   @else
                   <a href="{{ route('add_about') }}" style="float: right;"  class="btn btn-primary">
@@ -36,7 +36,6 @@
                       <thead>
                           <tr>
                               <th>Si</th>
-                              <th>About image</th>
                               <th>Short desc</th>
                               <th>Long desc</th>                                
                               <th>Action</th>
@@ -46,13 +45,6 @@
                           @foreach ($users as $key=> $user)
                           <tr>
                               <td>{{ $key+1 }}</td>
-                              <td> <div class="text-center">
-                                <img class="profile-user-img img-fluid" style="width: 250px;height:150px;"
-                                    src="{{url('upload/about',$user->image)}}"
-                                    
-                                    alt="User profile picture">
-                                </div>
-                              </td>
                               <td>{{ $user->short_title }}</td>
                               <td>{{ $user->long_title }}</td>
                               <td>

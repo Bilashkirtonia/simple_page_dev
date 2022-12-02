@@ -2,115 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Dev apps </title>
-            <!-- Font Awesome -->
-        <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        rel="stylesheet"
-        />
-        <!-- Google Fonts -->
-        <link
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        rel="stylesheet"
-        />
-        <!-- MDB -->
-        <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
-        rel="stylesheet"
-        />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <title>{{ $logo->logo_title }}</title>
+    <style>
+        *,*::after,*::before{
+          padding: 0;
+          margin: 0;
+          
+        }
+    </style>
 </head>
 <body>
-    <div class="container-fluid bg-success">
-      <div class="container">
-         {{-- nav-bar --}}
-         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <!-- Container wrapper -->
-            <div class="container-fluid">
-              <!-- Toggle button -->
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-mdb-toggle="collapse"
-                data-mdb-target="#navbarLeftAlignExample"
-                aria-controls="navbarLeftAlignExample"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <i class="fas fa-bars"></i>
-              </button>
-          
-              <!-- Collapsible wrapper -->
-              <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
-                <!-- Left links -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item pr-5">
-                    <a class="nav-link" aria-current="page" href="#">
-                      <img style="width: 100px;height:50px; margin-right:50px;" src="{{ url('upload/logo/'.$logo->image) }}" alt="">
-                    </a>
-                  </li>
-                  
-                  <!-- Navbar dropdown -->
-                  <li class="nav-item dropdown">
-                    <a
-                      class="nav-link dropdown-toggle"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                      data-mdb-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      About us
-                    </a>
-                    <!-- Dropdown menu -->
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li>
-                        <a class="dropdown-item" href="{{ route('about_us') }}">About us</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">Mission</a>
-                      </li>
-                      {{-- <li><hr class="dropdown-divider" /></li> --}}
-                      <li>
-                        <a class="dropdown-item" href="#">Vision</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">News and viwes</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact_us') }}">Contact us</a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
-                  </li>
-                  @if (Auth::id()) 
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">signin</a>
-                  </li>
-                  @endif
-                  
-                </ul>
+    <div class=" bg-light">
+     
+        <img src="{{ url('upload/slider/',$slider->image) }}" class="img-fluid w-100" style="height: 400px; object-fit: cover;" alt="Image">
 
-                <form class="d-flex input-group w-auto">
-                    <input
-                      type="search"
-                      class="form-control rounded"
-                      placeholder="Search"
-                      aria-label="Search"
-                      aria-describedby="search-addon"
-                    />
-                    <span class="input-group-text text-white border-0" id="search-addon">
-                      <i class="fas fa-search"></i>
-                    </span>
-                  </form>
-                <!-- Left links -->
-              </div>
-              <!-- Collapsible wrapper -->
-            </div>
-            <!-- Container wrapper -->
-          </nav>
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" style="padding:0 100px;">
+                <div class="container-fluid">
+                    
+                  <a class="navbar-brand" href="{{ url('/') }}" style="width: 150px; height:150px; border-radius: 50%; margin-top: -70px; object-fit: cover;">
+                    <img src="{{ url('upload/logo/',$logo->image) }}" alt="" style="width: 100%; height:100%; border-radius: 50%; border: 1px solid #000;">
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active h3" aria-current="page" href="{{ url('/') }}">{{ $logo->logo_title }}</a>
+                      </li>
+                      
+                     
+                    </ul>
+                    {{-- <div class="d-flex">
+                      <li class="nav-item">
+                        <a class="nav-link text-dark h5 active" aria-current="page" href="#"><br>
+                        </a>
+                        
+                      </li>
+                    </div> --}}
+                  </div>
+                </div>
+            </nav>

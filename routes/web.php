@@ -8,35 +8,24 @@ use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\LogoController;
 use App\Http\Controllers\backend\ProfileController;
 use App\Http\Controllers\backend\SliderController;
-use App\Http\Controllers\backend\MissionController;
-use App\Http\Controllers\backend\VissionController;
-use App\Http\Controllers\backend\NewsEventController;
-use App\Http\Controllers\backend\ServiceController;
 use App\Http\Controllers\backend\ContactController;
 use App\Http\Controllers\backend\AboutUsController;
-// use App\Http\Controllers\backend\ProfileController;
-// use App\Http\Controllers\backend\VissionController;
-// use App\Http\Controllers\backend\ProfileController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+
+
+
+
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
 Route::get('/',[FrontedController::class,'index']);
-Route::get('/about_us',[FrontedController::class,'about_us'])->name('about_us');
-Route::get('/contact_us',[FrontedController::class,'contact_us'])->name('contact_us');
-
-Route::post('/message',[FrontedController::class,'message'])->name('store_message');
+Route::get('/product-details/{id}',[FrontedController::class,'product_details'])->name('product-details');
+Route::get('/product-details-list/{id}',[FrontedController::class,'product_details_list'])->name('product-details-list');
 
 
 Route::group(['middleware' => 'auth'],function(){
@@ -91,48 +80,6 @@ Route::prefix('slide')->group(function(){
 
 });
 
-
-Route::prefix('mission')->group(function(){
-    Route::get('/view',[MissionController::class,'view_mission'])->name('view_mission');
-    Route::get('/add',[MissionController::class,'add_mission'])->name('add_mission');
-    Route::post('/store',[MissionController::class,'store_mission'])->name('store_mission');
-    Route::get('/edit/{id}',[MissionController::class,'edit_mission'])->name('edit_mission');
-    Route::post('/update/{id}',[MissionController::class,'update_mission'])->name('update_mission');
-    Route::get('/delete/{id}',[MissionController::class,'delete_mission'])->name('delete_mission');
-
-});
-
-Route::prefix('vision')->group(function(){
-    Route::get('/view',[VissionController::class,'view_vision'])->name('view_vision');
-    Route::get('/add',[VissionController::class,'add_vision'])->name('add_vision');
-    Route::post('/store',[VissionController::class,'store_vision'])->name('store_vision');
-    Route::get('/edit/{id}',[VissionController::class,'edit_vision'])->name('edit_vision');
-    Route::post('/update/{id}',[VissionController::class,'update_vision'])->name('update_vision');
-    Route::get('/delete/{id}',[VissionController::class,'delete_vision'])->name('delete_vision');
-
-});
-
-
-Route::prefix('news')->group(function(){
-    Route::get('/view',[NewsEventController::class,'view_news'])->name('view_news');
-    Route::get('/add',[NewsEventController::class,'add_news'])->name('add_news');
-    Route::post('/store',[NewsEventController::class,'store_news'])->name('store_news');
-    Route::get('/edit/{id}',[NewsEventController::class,'edit_news'])->name('edit_news');
-    Route::post('/update/{id}',[NewsEventController::class,'update_news'])->name('update_news');
-    Route::get('/delete/{id}',[NewsEventController::class,'delete_news'])->name('delete_news');
-
-});
-
-Route::prefix('service')->group(function(){
-    Route::get('/view',[ServiceController::class,'view_service'])->name('view_service');
-    Route::get('/add',[ServiceController::class,'add_service'])->name('add_service');
-    Route::post('/store',[ServiceController::class,'store_service'])->name('store_service');
-    Route::get('/edit/{id}',[ServiceController::class,'edit_service'])->name('edit_service');
-    Route::post('/update/{id}',[ServiceController::class,'update_service'])->name('update_service');
-    Route::get('/delete/{id}',[ServiceController::class,'delete_service'])->name('delete_service');
-
-});
-
 Route::prefix('contact')->group(function(){
     Route::get('/view',[ContactController::class,'view_contact'])->name('view_contact');
     Route::get('/add',[ContactController::class,'add_contact'])->name('add_contact');
@@ -152,6 +99,55 @@ Route::prefix('about')->group(function(){
     Route::get('/delete/{id}',[AboutUsController::class,'delete_about'])->name('delete_about');
 
 });
+
+Route::prefix('category')->group(function(){
+    Route::get('/view',[CategoryController::class,'view_category'])->name('view_category');
+    Route::get('/add',[CategoryController::class,'add_category'])->name('add_category');
+    Route::post('/store',[CategoryController::class,'store_category'])->name('store_category');
+    Route::get('/edit/{id}',[CategoryController::class,'edit_category'])->name('edit_category');
+    Route::post('/update/{id}',[CategoryController::class,'update_category'])->name('update_category');
+    Route::get('/delete/{id}',[CategoryController::class,'delete_category'])->name('delete_category');
+
+});
+
+Route::prefix('brand')->group(function(){
+    Route::get('/view',[BrandController::class,'view'])->name('view_brand');
+    Route::get('/add',[BrandController::class,'add'])->name('add_brand');
+    Route::post('/store',[BrandController::class,'store'])->name('store_brand');
+    Route::get('/edit/{id}',[BrandController::class,'edit'])->name('edit_brand');
+    Route::post('/update/{id}',[BrandController::class,'update'])->name('update_brand');
+    Route::get('/delete/{id}',[BrandController::class,'delete'])->name('delete_brand');
+
+});
+
+Route::prefix('product')->group(function(){
+    Route::get('/view',[ProductController::class,'view'])->name('view_product');
+    Route::get('/add',[ProductController::class,'add'])->name('add_product');
+    Route::post('/store',[ProductController::class,'store'])->name('store_product');
+    Route::get('/edit/{id}',[ProductController::class,'edit'])->name('edit_product');
+    Route::post('/update/{id}',[ProductController::class,'update'])->name('update_product');
+    Route::get('/delete/{id}',[ProductController::class,'delete'])->name('delete_product');
+    Route::get('/details/{id}',[ProductController::class,'details'])->name('product_details');
+
+});
+
+Route::prefix('order')->group(function(){
+    Route::get('/view',[OrderController::class,'view'])->name('view_order');
+    Route::get('/delete/{id}',[OrderController::class,'delete'])->name('delete_order');
+
+});
+
+Route::post('/inser-user-info',[OrderController::class,'inser_user_info'])->name('inser-user-info');
+
+
+
+
+
+
+
+
+
+
 
 });
 

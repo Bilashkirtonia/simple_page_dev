@@ -1,54 +1,47 @@
-   <!-- Footer -->
-   <footer class="bg-light text-center mt-4 bg-dark text-white">
-    <!-- Grid container -->
-    <div class="container p-4">
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-muted" style="background-color: #1F2532;">
+   
+      <section class="pt-3 text-white">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-6 col-lg-4 col-xl-3 mx-5 mb-4">
+              <h2 class="mb-5">Trying to reach out</h2>
+            
+              <p><i class="fa-brands fa-google me-3"></i> <a href="https://google.com/">{{ $contact->google }}</a></p>
+              <p><i class="fa-brands fa-facebook me-3"></i> <a href="https://facebook.com/">{{ $contact->facebook }}</a></p>
+              <p><i class="fa-brands fa-twitter me-3"></i> <a href="https://twitter.com/">{{ $contact->twitter }}</a></p>
+              <p><i class="fa-brands fa-youtube me-3"></i> <a href="https://youtube.com/">{{ $contact->youtube }}</a></p>
+            </div>
   
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="{{ $contact->facebook }}" role="button"><i class="fab fa-facebook-f"></i></a>
-  
-        <!-- Twitter -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="{{ $contact->twitter }}" role="button"><i class="fab fa-twitter"></i></a>
-  
-        <!-- Youtube -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="{{ $contact->youtube }}" role="button"><i class="fab fa-youtube"></i></a>
-  
-        <!-- Google -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="{{ $contact->google }}" role="button"><i class="fab fa-google"></i></a>
+            <div class="col-md-6 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 float-end">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> {{ $contact->address }}</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                {{ $contact->email }}
+              </p>
+              <p><i class="fas fa-phone me-3"></i>{{ $contact->mobile }}</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
       </section>
-      <!-- Section: Social media -->
-  
-
-  
-  
-      <!-- Section: Text -->
-      <section class="mb-4">
-        <p>
-          {{ $contact->address }} {{ $contact->mobile }} {{ $contact->email }}
-        </p>
-      </section>
-      <!-- Section: Text -->
-  
-  
-    </div>
-    <!-- Grid container -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-      Design from:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-  
-  </footer>
-  <!-- Footer -->
-</div>
-</div>
-    <!-- MDB -->
-    <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
-    ></script>
-</body>
-</html>
+      <!-- Section: Links  -->
+    
+      <!-- Copyright -->
+      {{-- <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">All rights reserved. Powered by SocialSeller</a>
+      </div> --}}
+      <!-- Copyright -->
+          </footer>
+          <!-- Footer -->
+          </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>

@@ -3,12 +3,12 @@
 <div class="container-fluid">
   <div class="row mb-2">
     <div class="col-sm-6">
-      <h1 class="m-0">Mission</h1>
+      <h1 class="m-0">Brand</h1>
     </div>
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active">Mission</li>
+        <li class="breadcrumb-item active">Brand</li>
       </ol>
     </div>
   </div>
@@ -17,15 +17,18 @@
         <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4>Mission list 
-                  
-                  @if ($logo == 1)
+                <h4>Brand 
+                  {{-- @if ($logo == 1)
                     
                   @else
-                  <a href="{{ route('add_mission') }}" style="float: right;"  class="btn btn-primary">
+                  <a href="{{ route('add_Brand') }}" style="float: right;"  class="btn btn-primary">
                     <i class="fas fa-plus"></i> Add
                   </a>
-                  @endif
+                  @endif --}}
+                  <a href="{{ route('add_brand') }}" style="float: right;"  class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Add
+                  </a>
+                 
                   
                 </h4>
               </div>
@@ -36,34 +39,30 @@
                       <thead>
                           <tr>
                               <th>Si</th>
-                              <th>Mission image</th>
-                              <th>Title</th>
-                                                           
+                              <th>Brand name</th>                               
                               <th>Action</th>
                           </tr>
                       </thead>
                       <tbody>
                           @foreach ($users as $key=> $user)
+                          {{-- @php
+                            $count_category = App\Models\Product::where('brand_id',$user->id)->count();
+                          @endphp --}}
                           <tr>
                               <td>{{ $key+1 }}</td>
-                              <td> <div class="text-center">
-                                <img class="profile-user-img img-fluid" style="width: 250px;height:150px;"
-                                    src="{{url('upload/mission',$user->image)}}"
-                                    
-                                    alt="User profile picture">
-                                </div>
-                              </td>
-                              <td>{{ $user->title }}</td>
-                              
+                              <td>{{ $user->name }}</td>
                               <td>
-                                <a href="{{ route('edit_mission',$user->id) }}" class="btn btn-success"><i class="fas fa-edit"></i></a>
-                                <a href="{{ route('delete_mission',$user->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                <a href="{{ route('edit_brand',$user->id) }}" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                                {{-- @if ($count_category<1) --}}
+                                <a href="{{ route('delete_brand',$user->id) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                {{-- @endif --}}
+
                               </td>
                           </tr>  
                           @endforeach
                           
                       </tbody>
-                  </table>
+                    </table>
                   </div>
                 </div>
               </div>

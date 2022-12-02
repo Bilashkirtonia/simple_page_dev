@@ -37,24 +37,6 @@
                            <div class="col">
                             <div class="row">
                               <div class="col-4">
-                                <label for="exampleFormControlInput1" class="form-label">Old image</label>
-                                  <div class="mb-3" style="width: 200px;height:150px;">
-                                      <img style="width: 250px;height:150px;" id="showImage" class="profile-user-img "
-                                        src="{{(@$editSlide)?url('upload/about/'.$editSlide->image) : url('image/avatar.png')}}"
-                                        
-                                        alt="User profile picture">
-                                      
-                                   </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-4">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Image</label>
-                                    <input id="image" type="file" value="" name="image" class="form-control" id="exampleFormControlInput1">                                            
-                                 </div>
-                              </div>
-                              <div class="col-4">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Short title</label>
                                     <input id="short_title" type="text" value="{{ @$editSlide->short_title}}" name="short_title" class="form-control" id="exampleFormControlInput1">                                            
@@ -63,7 +45,8 @@
                               <div class="col-12">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Long title</label>
-                                    <input id="long_title" type="text" value="{{ @$editSlide->long_title}}" name="long_title" class="form-control" id="exampleFormControlInput1">                                            
+                                    <textarea class="form-control" name="long_title" id="long_title" cols="30" rows="10">{{ @$editSlide->long_title}}</textarea>
+                                    {{-- <input id="long_title" type="text" value="{{ @$editSlide->long_title}}" name="long_title" class="form-control" id="exampleFormControlInput1">                                             --}}
                                  </div>
                               </div>
                             </div>
@@ -87,3 +70,5 @@
 </div>
 
 @endsection
+
+
